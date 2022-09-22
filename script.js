@@ -1,3 +1,5 @@
+// Adam Lee Prime Digital Academy Ramirez Cohort 22 September 2022
+
 $(main);
 
 let totalMonthly = 0;
@@ -7,6 +9,7 @@ function main() {
 }
 
 function onInitialize() {
+    // makes sure submit button works on startup
     $('#submitBtn').on('click', submitEmployee);
 }
 
@@ -22,8 +25,9 @@ function submitEmployee() {
         </tr>
     `)
 
+    // calculate new total monthly
     totalMonthly += Math.floor($('#emSalary').val() / 12);
-
+    // then change it visually on the DOM
     changeMonthly();
 
     // reset text box values
@@ -33,26 +37,27 @@ function submitEmployee() {
     $('#emTitle').val('');
     $('#emSalary').val('');
 
+    // new dynamic button. set new listeners
     dynamicListener();
 }
 
+// for making sure dynamic buttons work
 function dynamicListener() {
     $('.deleteEm').off('click');
     $('.deleteEm').on('click', removeEmployee);
 }
 
+// main function for removing table rows and calculating Total Monthly deductions
 function removeEmployee() {
     //button > td > tr > remove();
     $(this).parent().parent().remove();
-    //button > td > tr > td(6) > td[4] > string > $**** > ****
-    //let subMonthly = $(this).parent().parent().children().slice(4,5).text().slice(1);
-    //totalMonthly -= subMonthly;
+    //                         button >  td   >   tr   >  td(6)  >   td[4]  > string > $**** > ****
     totalMonthly -= Math.floor($(this).parent().parent().children().slice(4,5).text().slice(1)/12);
     changeMonthly();
 }
 
+// main function to change the Total Monthly element
 function changeMonthly() {
-
     $('#totalSection h2').remove();
     $('#totalSection').append(`
         <h2> Total Monthly: $${totalMonthly} </h2>
