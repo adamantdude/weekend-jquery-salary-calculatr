@@ -19,6 +19,14 @@ function submitEmployee() {
             <td><button class="deleteEm">Delete</button></td>
         </tr>
     `)
+
+    // reset text box values
+    $('#fName').val('');
+    $('#lName').val('');
+    $('#emID').val('');
+    $('#emTitle').val('');
+    $('#emSalary').val('');
+
     dynamicListener();
 }
 
