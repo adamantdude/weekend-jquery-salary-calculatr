@@ -26,7 +26,7 @@ function submitEmployee() {
     `)
 
     // calculate new total monthly
-    totalMonthly += Math.floor($('#emSalary').val() / 12);
+    totalMonthly += ($('#emSalary').val() / 12);
     // then change it visually on the DOM
     changeMonthly();
 
@@ -52,12 +52,14 @@ function removeEmployee() {
     //button > td > tr > remove();
     $(this).parent().parent().remove();
     //                         button >  td   >   tr   >  td(6)  >   td[4]  > string > $**** > ****
-    totalMonthly -= Math.floor($(this).parent().parent().children().slice(4,5).text().slice(1)/12);
+    totalMonthly -= ($(this).parent().parent().children().slice(4,5).text().slice(1)/12);
     changeMonthly();
 }
 
 // main function to change the Total Monthly element
 function changeMonthly() {
+    totalMonthly = Math.round(totalMonthly * 100) / 100;
+
     $('#totalSection h2').remove();
     $('#totalSection').append(`
         <h2> Total Monthly: $${totalMonthly} </h2>
