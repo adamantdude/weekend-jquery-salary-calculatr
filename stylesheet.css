@@ -5,7 +5,7 @@ header {
 }
 
 body {
-    margin: 1em 15em 5em;
+    margin: 1% 10%;
 }
 
 input {
@@ -13,24 +13,16 @@ input {
     font-size: 18px;
 }
 
-#addSection h2 {
-    margin: 10px;
-}
-
-#addSection button {
-    float: right;
+#addSection {
+    text-align: auto;
     margin: 1em;
     font-size: 18px;
-}
-
-#addSection {
-    margin: 0em 0em 1em;
 }
 
 th {
     font-size: 18px;
     text-align: left;
-    padding: 1em 5em 1em 1em;
+    padding: 8px;
     background-color: burlywood;
 }
 
@@ -41,11 +33,12 @@ footer {
 td {
     background-color: beige;
     font-size: 16px;
-    padding: 0em 0em 0em 2em;
+    padding: 0em 1em;
+    text-align: center;
 }
 
 td button {
-    margin: 1em 2em 1em 0em;
+    margin: 1em;
     font-size: 18px;
 }
 
