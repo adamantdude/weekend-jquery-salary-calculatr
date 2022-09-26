@@ -45,7 +45,7 @@ function submitEmployee() {
 function removeEmployee() {
     //button > td > tr > remove();
     $(this).parent().parent().remove();
-    //                         button >  td   >   tr   >  td(6)  >   td[4]  > string > $**** > ****
+    //              button >  td   >   tr   >  td(6)  >   td[4]  > string > $**** > ****
     totalMonthly -= ($(this).parent().parent().children().slice(4,5).text().slice(1)/12);
     changeMonthly();
 }
