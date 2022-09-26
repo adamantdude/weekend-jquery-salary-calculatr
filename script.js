@@ -11,6 +11,8 @@ function main() {
 function onInitialize() {
     // makes sure submit button works on startup
     $('#submitBtn').on('click', submitEmployee);
+
+    $(document).on('click', '.deleteEm', removeEmployee);
 }
 
 function submitEmployee() {
@@ -37,14 +39,6 @@ function submitEmployee() {
     $('#emTitle').val('');
     $('#emSalary').val('');
 
-    // new dynamic button. set new listeners
-    dynamicListener();
-}
-
-// for making sure dynamic buttons work
-function dynamicListener() {
-    $('.deleteEm').off('click');
-    $('.deleteEm').on('click', removeEmployee);
 }
 
 // main function for removing table rows and calculating Total Monthly deductions
